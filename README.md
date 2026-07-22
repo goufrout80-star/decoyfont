@@ -1,22 +1,33 @@
 # Decoy Studio
 
-A browser-based social post designer built specifically for **Mixfont’s Decoy Font**, an experimental COLR color font that combines high-frequency outlined decoy letters with a low-frequency hidden message.
+A focused browser-based post creator built for **Mixfont’s Decoy Font**. The tool produces clean social graphics containing only a Decoy Font message over a single solid background color.
 
-## Features
+## Simplified editor
 
-- Instagram, Stories/Reels, X, LinkedIn, YouTube, presentation, and custom canvas sizes
-- Six responsive art-direction templates
-- Decoy Font message editing with unsupported-character feedback
-- Drag-to-position, keyboard nudging, alignment, scale, tracking, rotation, and opacity controls
-- Near / medium / far distance simulation and squint preview
-- Safe-zone guides
+- Solid-color backgrounds only — no gradients, patterns, grain, frames, shapes, headers, or footers
+- Message-first workflow split into three clear tabs: Message, Canvas, and Type
+- Instagram portrait, square, Story, wide, and fully custom canvas sizes
+- Curated light background colors plus a custom color picker and HEX input
+- Automatic warning when a background is too dark for the font’s black and gray layers
+- Drag-to-position text, keyboard nudging, alignment, size, spacing, rotation, opacity, and auto-fit controls
+- Edit, Step Back, and Squint preview modes for testing the optical effect
 - Exact-resolution PNG export and clipboard copy
-- Save and load editable project JSON files
-- Fully static and ready for Vercel
+- Editable project save/load
+- Responsive desktop and mobile layouts
+
+## How Decoy Font works
+
+Decoy Font is a hybrid-image type experiment released by Mixfont in 2026. It combines a high-frequency layer made from thin outlined decoy letters with a low-frequency blurred layer containing the real typed message. The outlines dominate nearby; the actual message becomes easier to read at a smaller scale, from farther away, or while squinting.
+
+The font uses COLR/CPAL color-font tables and contextual substitutions. Repeated letters can cycle through different decoy forms. Its supported text is intentionally focused on A–Z, a–z, spaces, and line breaks, and it works best on light solid backgrounds.
+
+Decoy Font can interfere with casual OCR or visual extraction, but it is not encryption and must not be used to protect sensitive information.
+
+Original experiment: <https://www.mixfont.com/experiments/decoy-font>
 
 ## Run locally
 
-No build step is required. Serve the directory with any static server:
+No build step is required:
 
 ```bash
 python -m http.server 4173
@@ -24,20 +35,10 @@ python -m http.server 4173
 
 Then open `http://localhost:4173`.
 
-## Font research
+## Validation
 
-Decoy Font was released by Mixfont in 2026 as a hybrid-image typography experiment. Its thin high-frequency outline layer shows decoy letters up close, while the low-frequency blurred mass resolves into the typed message from farther away or while squinting. The TTF uses COLR/CPAL color-font tables and contextual substitutions so repeated letters can rotate through different decoys.
+The current build was browser-tested for successful font loading, preset and custom canvas resizing, background-color updates, phrase insertion with line breaks, responsive mobile layout, and clean RGB PNG export at the exact selected dimensions.
 
-The encoded character set is intentionally focused: A–Z, a–z, spaces, and a non-breaking space. Decoy Studio filters unsupported characters from the Decoy layer while allowing punctuation in the ordinary kicker and footer text. The font works best on light backgrounds.
+## License
 
-The app loads the official font file from Mixfont’s CDN. Decoy Font is free for personal, commercial, and client projects under its published DejaVu-derived license.
-
-- Experiment: https://www.mixfont.com/experiments/decoy-font
-- Font license: https://www.mixfont.com/experiments/decoy-font/DecoyFont-LICENSE.txt
-- Font file: https://static.mixfont.com/assets/20260714-232642-decoyfont-htoqkd3x.ttf
-
-Decoy Font may confuse casual OCR or visual extraction, but it is not encryption and should not be used as a security boundary.
-
-## Application license
-
-The application code in this repository is released under the MIT License.
+The application code is released under the MIT License. Decoy Font retains its original DejaVu-derived font license.
